@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khang</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #f2f2f2;
+    background: #0d0d0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 16px;
+    overflow-x: hidden;
+  }
+  /* Nền mờ lấy từ chính ảnh của bạn */
+  .bg {
+    position: fixed; inset: -40px;
+    background: url("anh.jpg") center/cover no-repeat;
+    filter: blur(40px) brightness(0.35);
+    z-index: -1;
+  }
+  .card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: fadeUp 0.9s ease both;
+  }
+  .photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    background: #222;
+  }
+  h1 {
+    margin-top: 22px;
+    font-size: 2rem;
+    letter-spacing: 0.04em;
+  }
+  .caption {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    opacity: 0.7;
+  }
+  .now {
+    margin: 26px 0 10px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.6;
+  }
+  .player {
+    width: 100%;
+    height: 152px;
+    border: 0;
+    border-radius: 14px;
+  }
+  .hint {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="bg"></div>
+
+  <main class="card">
+    <!-- Đổi tên file ảnh ở đây nếu ảnh của bạn không tên là anh.jpg -->
+    <img class="photo" src="anh.jpg" alt="Ảnh của Khang" onerror="this.style.display='none'">
+
+    <h1>Khang</h1>
+    <p class="caption">Chào bạn đã ghé phòng mình 👋</p>
+
+    <p class="now">♪ Bài mình đang nghe</p>
+    <!-- Muốn đổi bài: thay mã sau /track/ bằng mã bài khác trên Spotify -->
+    <iframe class="player"
+      src="https://open.spotify.com/embed/track/2tNsSp9VxJKpcQD4t0vVQS?utm_source=generator&theme=0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+    <p class="hint">Bấm ▶ để nghe "dư âm" – Obito</p>
+  </main>
+</body>
+</html>
